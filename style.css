@@ -1,0 +1,89 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    top: 40px;
+    font-size: 50px;
+    position: relative;
+}
+
+div {
+    text-align: center;
+}
+
+p {
+    font-size: large;
+    color: #000000;
+}
+
+.divCentral {
+    position: relative;
+    top: 120px;
+    width: 100%;
+    height: 265px;
+}
+
+.jogoForca {
+    position: relative;
+    width: 22%;
+    height: inherit;
+    border: blueviolet 1px solid;
+    margin-left: 40px;
+    border-radius: 25px;
+    background: #ffffff;
+}
+
+.jogoMemoria {
+    position: relative;
+    width: 22%;
+    height: inherit;
+    bottom: 101%;
+    left: 27%;
+    border: blueviolet 1px solid;
+    margin-left: 5px;
+    border-radius: 25px;
+    background: #ffffff;
+}
+
+.jogoPPT {
+    position: relative;
+    width: 22%;
+    height: inherit;
+    bottom: 201%;
+    left: 51%;
+    border: blueviolet 1px solid;
+    margin-left: 5px;
+    border-radius: 25px;
+    background: #ffffff;
+}
+
+.jogoVelha {
+    position: relative;
+    width: 22%;
+    height: inherit;
+    bottom: 302%;
+    left: 75%;
+    border: blueviolet 1px solid;
+    margin-left: 5px;
+    border-radius: 25px;
+    background: #ffffff;
+}
+
+footer {
+    position: relative;
+    top: 200px;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+}

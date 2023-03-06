@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Jogo da Velha</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="jogoVelha.css">
+</head>
+
+<body>
+    <a href="/index.html"><button class="voltar">Voltar para página inicial</button></a>
+    <h1>Jogo da Velha</h1>
+    <div style="position: relative; top: -50px;">
+        <div id="1" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="2" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="3" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+    </div>
+
+    <div style="position: relative; top: -50px;">
+        <div id="4" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="5" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="6" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+    </div>
+
+    <div style="position: relative; top: -50px;">
+        <div id="7" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="8" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="9" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+    </div>
+
+    <div class="rodadaAtual">  
+        <p>Rodada atual:</p>
+        <div >
+            <label>
+                Jogador da vez:
+            </label>
+            <label id="jogador-selecionado">
+    
+            </label>
+        </div>
+    
+        <div >
+            <label>
+                Vencedor:
+            </label>
+            <label id="vencedor-selecionado">
+    
+            </label>
+        </div>
+    </div>
+
+
+
+    <div class="placar">
+        <p>Placar:</p>
+        <div>
+            <span>Jogador X: </span><span id="contadorX">0</span>
+        </div>
+        <div>
+            <span>Jogador O: </span><span id="contadorO">0</span>
+        </div>
+    </div>
+
+    <button class="reload" onclick="reiniciar()">Novo jogo</button>
+
+</body>
+
+<script src="jogoVelha.js"></script>
+
+</html>

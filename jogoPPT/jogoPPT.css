@@ -1,0 +1,108 @@
+body {
+    background-color: aliceblue;
+}
+
+button {
+    background: none;
+    width: 210px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 17px;
+    margin-bottom: 0px;
+    margin-top: -54px;
+}
+
+.voltar {
+    background: none;
+    width: 210px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 17px;
+    position: relative;
+    left: 2%;
+    top: 2%;
+    margin-top: 10px;
+}
+
+.reload {
+    background: none;
+    width: 210px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 17px;
+    position: relative;
+    left: 2%;
+    top: 2%;
+    margin-top: -16px;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    position: relative;
+    bottom: 50px;
+}
+
+p {
+    font-size: 23px;
+    color: #000000;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: -65px;
+}
+
+.span {
+    font-size: 23px;
+    color: #000000;
+    text-align: center;
+    position: relative;
+}
+
+#rock {
+    position: relative;
+    left: 25%;
+    top: 20%;
+}
+
+#paper {
+    position: relative;
+    left: 27%;
+    top: 20%;
+}
+
+#scissors {
+    position: relative;
+    left: 29%;
+    top: 20%;
+}
+
+#result {
+    text-align: center;
+    position: relative;
+    font-size: 45px;
+    margin-top: 0px;
+}
+
+.image {
+    position: relative;
+    left: 35%;
+    top: 53%;
+    width: 50%;
+    margin-top: 55px;
+}
+
+span {
+    position: relative;
+    top: 70px;
+    left: -120px;
+    font-size: 22px;
+    padding-right: 60px;
+}
+
+.placar {
+    position: relative;
+    top: -65px;
+    left: -15%;
+}

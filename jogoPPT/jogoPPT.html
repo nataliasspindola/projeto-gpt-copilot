@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jogo Pedra, Papel e Tesoura</title>
+	<link rel="stylesheet" href="jogoPPT.css">
+</head>
+<body>
+	<a href="/index.html"><button class="voltar">Voltar para página inicial</button></a>
+	<h1>Jogo Pedra, Papel e Tesoura</h1>
+	<p>Escolha uma opção abaixo:</p>
+	<button id="rock">Pedra</button>
+	<button id="paper">Papel</button>
+	<button id="scissors">Tesoura</button>
+	
+	<span>Jogador</span>
+	<span>VS</span>
+	<span>Computador</span>
+
+	<div class="image" id="image">
+		<!-- <img id="img" src="/jogoPPT/imgPPT/pedra.png">
+		<img id="img" src="/jogoPPT/imgPPT/papel.png">
+		<img id="img" src="/jogoPPT/imgPPT/tesoura.png"> -->
+	</div>
+
+	<p id="result" style="margin-top: -22px;"></p>
+
+	<button id="btn-jogar" class="reload" onclick="reiniciarJogo()">
+		Novo jogo
+	</button>
+
+	<label style="position: relative; font-size: 25px; left: 20%; top: 20px;">Vitórias: <label style="position: relative; top: 0px; left: 0px;" id="wins">0</label></label>
+	<label style="position: relative; font-size: 25px; left: 22%; top: 20px;">Derrotas: <label style="position: relative; top: 0px; left: 0px;" id="losses">0</label></label>
+	<label style="position: relative; font-size: 25px; left: 24%; top: 20px;">Empates: <label style="position: relative; top: 0px; left: 0px;" id="ties">0</label></label>
+
+	<script src="jogoPPT.js"></script>
+</body>
+</html>
