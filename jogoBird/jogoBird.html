@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird</title>
+    <style>
+        canvas {
+            background-color: aliceblue;
+        }
+        .voltar {
+            background: none;
+            width: 210px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 17px;
+            position: relative;
+            left: -41%;
+            top: 2%;
+            margin-top: 10px;
+        }
+
+        body {
+            text-align: center;
+            background: aliceblue;
+        }
+        </style>
+  </head>
+  <body>
+    <a href="/index.html"><button class="voltar">Voltar para página inicial</button></a>
+    <canvas id="canvas" width="1355" height="500"></canvas>
+    <script>
+      // cria o canvas
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+
+      // carrega a imagem do pássaro e do cano
+      var birdImg = new Image();
+      birdImg.src = "https://raw.githubusercontent.com/sourabhv/FlapPyBird/master/assets/sprites/yellowbird-midflap.png";
+      var pipeImg = new Image();
+      pipeImg.src = "https://raw.githubusercontent.com/sourabhv/FlapPyBird/master/assets/sprites/pipe-green.png";
+
+      // define as variáveis
+      var bird = {
+        x: 50,
+        y: 150,
+        width: 40,
+        height: 30,
+        speed: 0,
+        gravity: 0.2
+      };
+
+      var pipes = [];
+      var pipeGap = 150;
+      var pipeTimer = 0;
+      var score = 0;
+
+      // desenha o pássaro
+      function drawBird() {
+        ctx.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
+      }
+
+      // desenha os canos
+      function drawPipes() {
+        for (var i = 0; i < pipes.length; i++) {
+          var pipe = pipes[i];
+          ctx.drawImage(pipeImg, pipe.x, 0, pipe.width, pipe.topHeight);
+          ctx.drawImage(pipeImg, pipe.x, pipe.bottomY, pipe.width, pipe.bottomHeight);
+        }
+      }
+
+      // move os canos
+      function updatePipes() {
+        for (var i = 0; i < pipes.length; i++) {
+          var pipe = pipes[i];
+          pipe.x -= 2;
+          if (pipe.x + pipe.width < 0) {
+            pipes.splice(i, 1);
+            i--;
+          }
+        }
+        pipeTimer++;
+        if (pipeTimer % 100 == 0) {
+          var topHeight = Math.floor(Math.random() * 200) + 50;
+          var bottomY = topHeight + pipeGap;
+          var bottomHeight = canvas.height - bottomY;
+          pipes.push({
+            x: canvas.width,
+            topHeight: topHeight,
+            bottomY: bottomY,
+            bottomHeight: bottomHeight,
+            width: 50
+          });
+        }
+      }
+
+      // verifica se o pássaro colidiu com um cano
+      function checkCollision() {
+        for (var i = 0; i < pipes.length; i++) {
+          var pipe = pipes[i];
+          if (bird.x < pipe.x + pipe.width && bird.x + bird.width > pipe.x &&
+              (bird.y < pipe.topHeight || bird.y + bird.height > pipe.bottomY)) {
+            return true;
+          }
+        }
+        if (bird.y + bird.height > canvas.height || bird.y < 0) {
+          return true;
+        }
+        return false;
+      }
+
+      // atualiza o jogo
+      function update() {
+        bird.speed += bird.gravity;
+        bird.y += bird.speed;
+        if(checkCollision()) {
+      // o jogo acabou
+      alert("Fim de jogo! Sua pontuação foi: " + score);
+      document.location.reload();
+    } else {
+      // o jogo continua
+      score++;
+      updatePipes();
+      draw();
+      requestAnimationFrame(update);
+    }
+  }
+
+  // desenha tudo na tela
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBird();
+    drawPipes();
+    ctx.fillStyle = "#000";
+    ctx.font = "20px Arial";
+    ctx.fillText("Pontuação: " + score, 10, 30);
+  }
+
+  // faz o pássaro subir quando o jogador pressiona a tecla espaço
+  document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+      bird.speed = -5;
+    }
+  });
+
+  // começa o jogo
+  update();
+</script>
+</body>
+</html>
